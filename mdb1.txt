@@ -1,0 +1,18 @@
+use SchoolLibary //create database
+switched to db SchoolLibary
+db.dropDatabase()
+{ ok: 1, dropped: 'SchoolLibary' }
+use SchoolLibrary
+switched to db SchoolLibrary
+db.books.insert({title:"Introduction to Science",author:"Dr.Smith",available:"true"}) //insert values in collections
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('691587586d40ba3cfa1932c9')
+  }
+}
+show collections //view collection
+books
+db.books.drop() //drop the collection
+true
+db.dropDatabase() //drop yhe database
