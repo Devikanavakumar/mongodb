@@ -1,0 +1,50 @@
+// Switch to or create the EventTracker database
+use EventTracker
+
+// Insert one event using insertOne()
+db.UpcomingEvents.insertOne({
+  name: "Music Fest",
+  date: new Date(),
+  isFreeEntry: false,
+  ticketPrice: 299.99,
+  performers: ["DJ Max", "Live Band"],
+  location: {
+    city: "Chennai",
+    venue: "Beach Arena"
+  },
+  specialCode: null
+})
+
+// Insert two more events using insertMany()
+db.UpcomingEvents.insertMany([
+  {
+    name: "Art Expo",
+    date: new Date("2025-12-01"),
+    isFreeEntry: true,
+    ticketPrice: 0,
+    performers: ["Local Artists"],
+    location: {
+      city: "Bangalore",
+      venue: "Art Gallery Central"
+    },
+    specialCode: "ART2025"
+  },
+  {
+    name: "Tech Summit",
+    date: new Date("2026-01-15"),
+    isFreeEntry: false,
+    ticketPrice: 499.50,
+    performers: ["Keynote Speaker", "Panelists"],
+    location: {
+      city: "Hyderabad",
+      venue: "Tech Convention Center"
+    },
+    specialCode: null
+  }
+])
+
+// Show all collections in the current database
+show collections
+
+// Display all documents in the UpcomingEvents collection
+db.UpcomingEvents.find()
