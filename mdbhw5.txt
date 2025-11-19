@@ -15,4 +15,4 @@ db.students.insertMany([
 db.students.find({},{_id:0,name:1,email:1})
 db.students.find({}).limit(5)
 db.students.find({},{ _id:0,name:1,grade:1}).limit(4).skip(3)
-db.students.find({},{name:1,email:1}).limit(3).skip(6)
+db.students.find({},{ _id:0,name:1,email:1}).limit(3).skip(6)
